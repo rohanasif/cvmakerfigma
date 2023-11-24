@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import LandingNavbar from "../components/LandingNavbar";
 const LandingPage = () => {
   return (
-    <div className="flex p-4 bg-slate-600 w-full justify-between">
-      <img src={logo} alt="logo" />
+    <div className="w-full h-screen">
+      <LandingNavbar />
     </div>
   );
 };
