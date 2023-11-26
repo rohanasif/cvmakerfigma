@@ -1,4 +1,14 @@
-import { SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from "../constants";
+import {
+  LOGIN_FAILURE,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGOUT_FAILURE,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
+  SIGNUP_FAILURE,
+  SIGNUP_REQUEST,
+  SIGNUP_SUCCESS,
+} from "../constants";
 
 const initialState = {
   users: [],
@@ -26,10 +36,60 @@ export const signUpReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        message: { ...state.message, text: "Registration failed" },
+        message: { ...state.message, text: action.payload },
       };
 
     default:
       return state;
+  }
+};
+
+export const loginReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LOGIN_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        users: state.users.map((user) =>
+          user.email === action.payload.email
+            ? { ...user, isLoggedin: true }
+            : user
+        ),
+        message: { text: "Login successful" },
+      };
+    case LOGIN_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        message: { ...state.message, text: action.payload },
+      };
+
+    case LOGOUT_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        users: state.users.map((user) =>
+          user.email === action.payload.email
+            ? { ...user, isLoggedin: false }
+            : user
+        ),
+        message: { text: "Logout successful" },
+      };
+
+    case LOGOUT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        message: { ...state.message, text: action.payload },
+      };
   }
 };
