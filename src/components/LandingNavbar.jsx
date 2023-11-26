@@ -6,7 +6,7 @@ const LandingNavbar = () => {
   const handleCreateProfile = () => {};
   const handleCreateEmployer = () => {};
   return (
-    <div className="flex px-[60px] py-[41px]  w-full justify-between">
+    <div className="flex w-full justify-between">
       <img src={logo} alt="logo" />
       <div className="flex items-center w-[40vw] justify-between">
         <Link className="text-[#635EA3]" to="/">
