@@ -1,12 +1,12 @@
 import React from "react";
-import Login from "./Login";
-import SignUp from "./SignUp";
+import HeaderLeft from "./HeaderLeft";
+import HeaderRight from "./HeaderRight";
 
 const LandingHeader = () => {
   return (
     <div className="flex h-[90vh] justify-between flex-wrap">
-      <Login />
-      <SignUp />
+      <HeaderLeft />
+      <HeaderRight />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import gg from "../assets/search 1.png";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../actions";
 
-const SignUp = () => {
+const HeaderRight = () => {
   const dispatch = useDispatch();
   const message = useSelector((state) => state.signUp.message.text);
   const [user, setUser] = useState({
@@ -106,4 +106,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default HeaderRight;

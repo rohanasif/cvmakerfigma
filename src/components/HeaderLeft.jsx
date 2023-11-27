@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const HeaderLeft = () => {
   return (
     <div className="flex flex-col w-[400px] h-full justify-center">
       <h1>
@@ -17,4 +17,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default HeaderLeft;
