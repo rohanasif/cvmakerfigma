@@ -1,4 +1,5 @@
 import {
+  GET_USERS,
   LOGIN_FAILURE,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -91,5 +92,19 @@ export const loginReducer = (state = initialState, action) => {
         isLoading: false,
         message: { ...state.message, text: action.payload },
       };
+    default:
+      return state;
+  }
+};
+
+export const usersReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_USERS:
+      return {
+        ...state,
+        users: action.payload,
+      };
+    default:
+      return state;
   }
 };

@@ -12,3 +12,5 @@ export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
 
 export const GET_USERS = "GET_USERS";
 export const GET_USER = "GET_USER";
+
+export const BASE_URL = "http://localhost:3000";

@@ -1,5 +1,14 @@
 {
-  "users": [],
-  "isLoading": false,
-  "message": { "text": "" }
+  "users": [
+    {
+      "name": "rohanasif",
+      "email": "rohanasif1990@gmail.com",
+      "phone": "+923134614022",
+      "password": "1",
+      "id": 1
+    }
+  ],
+  "message": {
+    "text": ""
+  }
 }
