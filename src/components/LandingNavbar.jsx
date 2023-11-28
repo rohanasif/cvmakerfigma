@@ -8,13 +8,7 @@ const LandingNavbar = () => {
   return (
     <div className="flex w-full justify-between">
       <img src={logo} alt="logo" />
-      <div className="flex items-center w-[40vw] justify-between">
-        <Link className="text-[#635EA3]" to="/">
-          Option 1
-        </Link>
-        <Link className="text-[#635EA3]" to="/">
-          Option 2
-        </Link>
+      <div className="flex items-center gap-4">
         <button
           className="px-[25px] py-[15px] border-2 border-[#635EA3] text-[#635EA3] rounded-[10px]"
           onClick={() => handleCreateProfile()}

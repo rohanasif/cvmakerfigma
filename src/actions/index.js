@@ -1,6 +1,9 @@
 import axios from "axios";
 import {
   BASE_URL,
+  LOGIN_FAILURE,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
   SIGNUP_FAILURE,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
@@ -25,4 +28,25 @@ export const signup = (user) => async (dispatch) => {
     console.error(e);
   }
 };
-export const login = (user) => async (dispatch) => {};
+export const login = (user) => async (dispatch) => {
+  try {
+    const usersResponse = await axios.get(`${BASE_URL}/users`);
+    const users = usersResponse.data;
+    dispatch({ type: LOGIN_REQUEST });
+    if (users.length === 0) {
+      dispatch({ type: LOGIN_FAILURE, payload: "No users registered" });
+    } else {
+      if (
+        users.find(
+          (u) => u.email === user.email && u.password === user.password
+        )
+      ) {
+        dispatch({ type: LOGIN_SUCCESS, payload: user });
+      } else {
+        dispatch({ type: LOGIN_FAILURE, payload: "Invalid credentials" });
+      }
+    }
+  } catch (e) {
+    console.error(e);
+  }
+};
