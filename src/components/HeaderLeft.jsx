@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderLeft = () => {
+const HeaderLeft = ({ login, setLogin }) => {
   return (
     <div className="flex flex-col w-[400px] h-full justify-center">
       <h1>
@@ -10,9 +10,22 @@ const HeaderLeft = () => {
         Discover the leading companies in the blockchain industry and find job
         opportunities.
       </p>
-      <button className="headerbtns rounded-[10px] text-white py-[15px] px-[95px]">
-        Login Now
-      </button>
+      {login && (
+        <button
+          className="headerbtns rounded-[10px] text-white py-[15px] px-[95px]"
+          onClick={() => setLogin(false)}
+        >
+          Sign Up
+        </button>
+      )}
+      {!login && (
+        <button
+          className="headerbtns rounded-[10px] text-white py-[15px] px-[95px]"
+          onClick={() => setLogin(true)}
+        >
+          Login
+        </button>
+      )}
     </div>
   );
 };
