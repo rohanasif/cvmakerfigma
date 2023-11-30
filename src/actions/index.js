@@ -4,9 +4,12 @@ import {
   LOGIN_FAILURE,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
   SIGNUP_FAILURE,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
+  STEP,
 } from "../constants";
 
 export const signup = (user) => async (dispatch) => {
@@ -41,11 +44,56 @@ export const login = (user) => async (dispatch) => {
           (u) => u.email === user.email && u.password === user.password
         )
       ) {
+        await axios.patch(`${BASE_URL}/${user.id}`, {
+          isLoggedin: true,
+        });
+
         dispatch({ type: LOGIN_SUCCESS, payload: user });
       } else {
         dispatch({ type: LOGIN_FAILURE, payload: "Invalid credentials" });
       }
     }
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const getLoggedUser = () => async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/users?isLoggedin=true`);
+    const userArr = response.data;
+    const user = userArr[0];
+    return user;
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const logout = (user) => async (dispatch) => {
+  try {
+    dispatch({ type: LOGOUT_REQUEST });
+    if (user.isLoggedin) {
+      const response = await axios.patch(`${BASE_URL}/${user.id}`, {
+        isLoggedin: false,
+      });
+      dispatch({ type: LOGOUT_SUCCESS, payload: response.data });
+    } else {
+      dispatch({
+        type: LOGIN_FAILURE,
+        payload: "User not logged in! Please refresh!",
+      });
+    }
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const step = (info) => async (dispatch) => {
+  try {
+    const loggedUser = await dispatch(getLoggedUser());
+    const userId = loggedUser.id;
+    const response = axios.patch(`${BASE_URL}/users/${userId}`, info);
+    dispatch({ type: STEP, payload: response.data });
   } catch (e) {
     console.error(e);
   }

@@ -9,6 +9,7 @@ import {
   SIGNUP_FAILURE,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
+  STEP,
 } from "../constants";
 
 const initialState = {
@@ -106,5 +107,17 @@ export const usersReducer = (state = initialState, action) => {
       };
     default:
       return state;
+  }
+};
+
+export const stepsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case STEP:
+      return {
+        ...state,
+        users: state.users.map((user) =>
+          user.isLoggedin ? { ...user, ...action.payload } : user
+        ),
+      };
   }
 };
