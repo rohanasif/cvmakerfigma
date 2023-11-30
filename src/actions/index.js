@@ -42,7 +42,6 @@ export const login = (user) => async (dispatch) => {
       const userToLogin = users.find(
         (u) => u.email === user.email && u.password === user.password
       );
-      console.log(userToLogin);
       if (userToLogin) {
         await axios.patch(`${BASE_URL}/users/${userToLogin.id}`, {
           isLoggedin: true,
