@@ -135,7 +135,7 @@ const HeaderRight = ({ login }) => {
             className="headerbtns rounded-[10px] py-[15px] px-[95px] text-white"
             type="submit"
           >
-            Register Now
+            Login now
           </button>
         </form>
       )}

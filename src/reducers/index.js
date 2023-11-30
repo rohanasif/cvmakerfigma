@@ -15,7 +15,7 @@ import {
 const initialState = {
   users: [],
   isLoading: false,
-  message: { text: "" },
+  message: "",
 };
 
 export const signUpReducer = (state = initialState, action) => {
@@ -31,14 +31,14 @@ export const signUpReducer = (state = initialState, action) => {
         ...state,
         users: [...state.users, action.payload],
         isLoading: false,
-        message: { ...state.message, text: "Registration successful" },
+        message: "Registration successful",
       };
 
     case SIGNUP_FAILURE:
       return {
         ...state,
         isLoading: false,
-        message: { ...state.message, text: action.payload },
+        message: action.payload,
       };
 
     default:
@@ -61,13 +61,13 @@ export const loginReducer = (state = initialState, action) => {
             ? { ...user, isLoggedin: true }
             : user
         ),
-        message: { text: "Login successful" },
+        message: "Login successful",
       };
     case LOGIN_FAILURE:
       return {
         ...state,
         isLoading: false,
-        message: { ...state.message, text: action.payload },
+        message: action.payload,
       };
 
     case LOGOUT_REQUEST:
@@ -84,14 +84,14 @@ export const loginReducer = (state = initialState, action) => {
             ? { ...user, isLoggedin: false }
             : user
         ),
-        message: { text: "Logout successful" },
+        message: "Logout successful",
       };
 
     case LOGOUT_FAILURE:
       return {
         ...state,
         isLoading: false,
-        message: { ...state.message, text: action.payload },
+        message: action.payload,
       };
     default:
       return state;
@@ -119,5 +119,7 @@ export const stepsReducer = (state = initialState, action) => {
           user.isLoggedin ? { ...user, ...action.payload } : user
         ),
       };
+    default:
+      return state;
   }
 };
