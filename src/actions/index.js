@@ -39,12 +39,12 @@ export const login = (user) => async (dispatch) => {
     if (users.length === 0) {
       dispatch({ type: LOGIN_FAILURE, payload: "No users registered" });
     } else {
-      if (
-        users.find(
-          (u) => u.email === user.email && u.password === user.password
-        )
-      ) {
-        await axios.patch(`${BASE_URL}/${user.id}`, {
+      const userToLogin = users.find(
+        (u) => u.email === user.email && u.password === user.password
+      );
+      console.log(userToLogin);
+      if (userToLogin) {
+        await axios.patch(`${BASE_URL}/users/${userToLogin.id}`, {
           isLoggedin: true,
         });
 

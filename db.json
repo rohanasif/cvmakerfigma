@@ -1,18 +1,12 @@
 {
   "users": [
     {
-      "name": "rohanasif",
+      "name": "Rohan Asif",
       "email": "rohanasif1990@gmail.com",
       "phone": "+923134614022",
       "password": "1",
-      "id": 1
-    },
-    {
-      "name": "rohanasif",
-      "email": "rohanasif19920@gmail.com",
-      "phone": "+923134614022",
-      "password": "1",
-      "id": 2
+      "id": 1,
+      "isLoggedin": true
     }
   ],
   "message": {

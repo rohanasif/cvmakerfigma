@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.png;";
 import { useSelector } from "react-redux";
 const MainNavBar = () => {
-  const user = useSelector((state) => state.users);
+  const user = useSelector((state) => state.login);
   console.log(user);
   return (
     <div className="flex w-full justify-between">

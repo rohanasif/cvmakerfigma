@@ -3,11 +3,11 @@ import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
 
 const LandingHeader = () => {
-  const [login, setLogin] = useState(true);
+  const [loginStatus, setLoginStatus] = useState(true);
   return (
     <div className="flex h-[90vh] justify-between flex-wrap">
-      <HeaderLeft login={login} setLogin={setLogin} />
-      <HeaderRight login={login} />
+      <HeaderLeft loginStatus={loginStatus} setLoginStatus={setLoginStatus} />
+      <HeaderRight loginStatus={loginStatus} />
     </div>
   );
 };
