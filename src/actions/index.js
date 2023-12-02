@@ -2,12 +2,9 @@ import axios from "axios";
 import {
   BASE_URL,
   LOGIN_FAILURE,
-  LOGIN_REQUEST,
   LOGIN_SUCCESS,
-  LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   SIGNUP_FAILURE,
-  SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   STEP,
 } from "../constants";
@@ -16,7 +13,6 @@ export const signup = (user) => async (dispatch) => {
   try {
     const usersResponse = await axios.get(`${BASE_URL}/users`);
     const users = usersResponse.data;
-    dispatch({ type: SIGNUP_REQUEST });
     if (users.find((u) => u.email === user.email)) {
       dispatch({
         type: SIGNUP_FAILURE,
@@ -35,7 +31,6 @@ export const login = (user) => async (dispatch) => {
   try {
     const usersResponse = await axios.get(`${BASE_URL}/users`);
     const users = usersResponse.data;
-    dispatch({ type: LOGIN_REQUEST });
     if (users.length === 0) {
       dispatch({ type: LOGIN_FAILURE, payload: "No users registered" });
     } else {
@@ -70,7 +65,6 @@ export const getLoggedUser = () => async () => {
 
 export const logout = (user) => async (dispatch) => {
   try {
-    dispatch({ type: LOGOUT_REQUEST });
     if (user.isLoggedin) {
       const response = await axios.patch(`${BASE_URL}/${user.id}`, {
         isLoggedin: false,

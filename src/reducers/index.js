@@ -1,46 +1,32 @@
 import {
   GET_USERS,
   LOGIN_FAILURE,
-  LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGOUT_FAILURE,
-  LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   SIGNUP_FAILURE,
-  SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   STEP,
 } from "../constants";
 
 const initialState = {
   users: [],
-  isLoading: false,
   message: "",
 };
 
 export const signUpReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SIGNUP_REQUEST:
-      return {
-        ...state,
-        isLoading: true,
-      };
-
     case SIGNUP_SUCCESS:
       return {
         ...state,
         users: [...state.users, action.payload],
-        isLoading: false,
         message: "Registration successful",
       };
-
     case SIGNUP_FAILURE:
       return {
         ...state,
-        isLoading: false,
         message: action.payload,
       };
-
     default:
       return state;
   }
@@ -48,11 +34,6 @@ export const signUpReducer = (state = initialState, action) => {
 
 export const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_REQUEST:
-      return {
-        ...state,
-        isLoading: true,
-      };
     case LOGIN_SUCCESS:
       return {
         ...state,
@@ -66,16 +47,8 @@ export const loginReducer = (state = initialState, action) => {
     case LOGIN_FAILURE:
       return {
         ...state,
-        isLoading: false,
         message: action.payload,
       };
-
-    case LOGOUT_REQUEST:
-      return {
-        ...state,
-        isLoading: true,
-      };
-
     case LOGOUT_SUCCESS:
       return {
         ...state,
@@ -86,11 +59,9 @@ export const loginReducer = (state = initialState, action) => {
         ),
         message: "Logout successful",
       };
-
     case LOGOUT_FAILURE:
       return {
         ...state,
-        isLoading: false,
         message: action.payload,
       };
     default:
