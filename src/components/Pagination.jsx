@@ -25,7 +25,7 @@ const Pagination = ({ pageNumber }) => {
   };
 
   const getPageItemClassName = (page) => {
-    if (page === currentPage || page < currentPage) {
+    if (page === currentPage || page <= currentPage) {
       return "active";
     }
     return "";
