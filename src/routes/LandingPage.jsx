@@ -10,8 +10,8 @@ const LandingPage = () => {
   useEffect(() => {
     const fetchLogged = async () => {
       const loggedInUser = await dispatch(getLoggedUser());
-      if (loggedInUser.isLoggedin) {
-        navigate("/one");
+      if (loggedInUser?.isLoggedin) {
+        navigate("/1");
       }
     };
     fetchLogged();

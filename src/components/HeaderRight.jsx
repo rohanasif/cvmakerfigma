@@ -26,7 +26,7 @@ const HeaderRight = ({ loginStatus }) => {
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(login(user));
-    navigate("/one");
+    navigate("/1");
   };
   return (
     <div className="flex flex-col rounded-[10px] px-[50px] py-[30px] w-[500px] h-full signupbox">
