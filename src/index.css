@@ -42,12 +42,12 @@
   text-decoration: none;
   padding: 8px 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 999px;
   cursor: pointer;
 }
 
 .pagination a.active,
 .pagination a:hover {
-  background-color: #4caf50;
+  background-color: #635ea3;
   color: white;
 }
