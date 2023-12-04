@@ -1,14 +1,5 @@
 {
-  "users": [
-    {
-      "name": "Rohan Asif",
-      "email": "rohanasif1990@gmail.com",
-      "phone": "+923134614022",
-      "password": "1",
-      "id": 1,
-      "isLoggedin": true
-    }
-  ],
+  "users": [],
   "message": {
     "text": ""
   }

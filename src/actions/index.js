@@ -4,6 +4,7 @@ import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
   SIGNUP_FAILURE,
   SIGNUP_SUCCESS,
   STEP,
@@ -72,7 +73,7 @@ export const logout = (user) => async (dispatch) => {
       dispatch({ type: LOGOUT_SUCCESS, payload: response.data });
     } else {
       dispatch({
-        type: LOGIN_FAILURE,
+        type: LOGOUT_FAILURE,
         payload: "User not logged in! Please refresh!",
       });
     }
