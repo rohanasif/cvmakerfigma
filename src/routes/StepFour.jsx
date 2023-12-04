@@ -1,7 +1,8 @@
 import React from "react";
+import Pagination from "../components/Pagination";
 
 const StepFour = () => {
-  return <div>StepFour</div>;
+  return <Pagination pageNumber={4} />;
 };
 
 export default StepFour;

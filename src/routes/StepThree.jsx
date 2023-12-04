@@ -1,7 +1,7 @@
 import React from "react";
-
+import Pagination from "../components/Pagination";
 const StepThree = () => {
-  return <div>StepThree</div>;
+  return <Pagination pageNumber={3} />;
 };
 
 export default StepThree;

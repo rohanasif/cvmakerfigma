@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Pagination = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+const Pagination = ({ pageNumber }) => {
+  const [currentPage, setCurrentPage] = useState(pageNumber);
 
   const changePage = (page) => {
     setCurrentPage(page);
@@ -12,13 +13,13 @@ const Pagination = () => {
 
     return pages.map((page) => (
       <li key={page}>
-        <a
-          href="#"
+        <Link
+          to={`/${page}`}
           onClick={() => changePage(page)}
           className={getPageItemClassName(page)}
         >
           {page}
-        </a>
+        </Link>
       </li>
     ));
   };

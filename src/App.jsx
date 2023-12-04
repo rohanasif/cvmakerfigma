@@ -14,10 +14,10 @@ const App = () => {
     <div className="flex flex-col justify-between items-center">
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/one" element={<StepOne />} />
-        <Route path="/two" element={<StepTwo />} />
-        <Route path="/three" element={<StepThree />} />
-        <Route path="/four" element={<StepFour />} />
+        <Route path="/1" element={<StepOne />} />
+        <Route path="/2" element={<StepTwo />} />
+        <Route path="/3" element={<StepThree />} />
+        <Route path="/4" element={<StepFour />} />
         <Route path="/review" element={<Review />} />
         <Route path="/add" element={<AddDetails />} />
         <Route path="/resume" element={<Resume />} />
