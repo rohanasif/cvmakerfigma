@@ -3,10 +3,15 @@
     {
       "name": "Rohan Asif",
       "email": "r@y.com",
-      "phone": "1",
+      "phone": "+923134614022",
       "password": "1",
       "id": 1,
-      "isLoggedin": true
+      "isLoggedin": true,
+      "fname": "Rohan",
+      "lname": "Asif",
+      "dob": "1990-11-23",
+      "degree": "Bsc",
+      "gender": "male"
     }
   ],
   "message": {

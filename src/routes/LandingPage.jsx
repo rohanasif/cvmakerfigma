@@ -5,10 +5,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
   const navigate = useNavigate();
-
   const users = useSelector((state) => state.main.users);
   const loggedinUser = users.find((user) => user.isLoggedin);
-  console.log(loggedinUser);
   useEffect(() => {
     if (loggedinUser?.isLoggedin) {
       navigate("/1");

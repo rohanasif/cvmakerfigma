@@ -85,7 +85,7 @@ export const step = (info) => async (dispatch) => {
   try {
     const loggedUser = await dispatch(getLoggedUser());
     const userId = loggedUser.id;
-    const response = axios.patch(`${BASE_URL}/users/${userId}`, info);
+    const response = await axios.patch(`${BASE_URL}/users/${userId}`, info);
     dispatch({ type: STEP, payload: response.data });
   } catch (e) {
     console.error(e);

@@ -2,7 +2,7 @@ import React from "react";
 
 const Login = ({ handleChange, user, handleLogin }) => {
   return (
-    <form onSubmit={(e) => handleLogin(e)}>
+    <form className="flex flex-col gap-[20px]" onSubmit={(e) => handleLogin(e)}>
       <label htmlFor="email">
         Email<span className="text-red-700">*</span>
       </label>

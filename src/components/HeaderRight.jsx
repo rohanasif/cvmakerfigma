@@ -32,14 +32,16 @@ const HeaderRight = ({ loginStatus }) => {
       <div className="flex items-center justify-between">
         {!loginStatus && <h1>SIGN UP</h1>}
         {loginStatus && <h1>LOGIN</h1>}
-        <div>
-          <button className="rounded-l-[5px] box-border px-[10px] py-[5px] active">
-            Job seeker
-          </button>
-          <button className="rounded-r-[5px] box-border px-[10px] py-[5px] inactive">
-            Employer
-          </button>
-        </div>
+        {!loginStatus && (
+          <div>
+            <button className="rounded-l-[5px] box-border px-[10px] py-[5px] active">
+              Job seeker
+            </button>
+            <button className="rounded-r-[5px] box-border px-[10px] py-[5px] inactive">
+              Employer
+            </button>
+          </div>
+        )}
       </div>
 
       {!loginStatus && (
