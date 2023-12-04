@@ -8,7 +8,7 @@ import Login from "./Login";
 import { useNavigate } from "react-router-dom";
 const HeaderRight = ({ loginStatus }) => {
   const dispatch = useDispatch();
-  const message = useSelector((state) => state.signUp.message.text);
+  const message = useSelector((state) => state.main.message);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -26,7 +26,6 @@ const HeaderRight = ({ loginStatus }) => {
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(login(user));
-    navigate("/1");
   };
   return (
     <div className="flex flex-col rounded-[10px] px-[50px] py-[30px] w-[500px] h-full signupbox">

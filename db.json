@@ -1,5 +1,14 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "Rohan Asif",
+      "email": "r@y.com",
+      "phone": "1",
+      "password": "1",
+      "id": 1,
+      "isLoggedin": true
+    }
+  ],
   "message": {
     "text": ""
   }

@@ -42,7 +42,6 @@ export const login = (user) => async (dispatch) => {
         await axios.patch(`${BASE_URL}/users/${userToLogin.id}`, {
           isLoggedin: true,
         });
-
         dispatch({ type: LOGIN_SUCCESS, payload: user });
       } else {
         dispatch({ type: LOGIN_FAILURE, payload: "Invalid credentials" });

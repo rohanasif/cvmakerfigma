@@ -14,7 +14,7 @@ const initialState = {
   message: "",
 };
 
-export const signUpReducer = (state = initialState, action) => {
+export const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case SIGNUP_SUCCESS:
       return {
@@ -27,13 +27,6 @@ export const signUpReducer = (state = initialState, action) => {
         ...state,
         message: action.payload,
       };
-    default:
-      return state;
-  }
-};
-
-export const loginReducer = (state = initialState, action) => {
-  switch (action.type) {
     case LOGIN_SUCCESS:
       return {
         ...state,
@@ -64,25 +57,11 @@ export const loginReducer = (state = initialState, action) => {
         ...state,
         message: action.payload,
       };
-    default:
-      return state;
-  }
-};
-
-export const usersReducer = (state = initialState, action) => {
-  switch (action.type) {
     case GET_USERS:
       return {
         ...state,
         users: action.payload,
       };
-    default:
-      return state;
-  }
-};
-
-export const stepsReducer = (state = initialState, action) => {
-  switch (action.type) {
     case STEP:
       return {
         ...state,

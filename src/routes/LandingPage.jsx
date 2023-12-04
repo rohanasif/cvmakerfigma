@@ -1,23 +1,21 @@
 import React, { useEffect } from "react";
 import LandingNavbar from "../components/LandingNavbar";
 import LandingHeader from "../components/LandingHeader";
-import { useDispatch } from "react-redux";
-import { getLoggedUser } from "../actions";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const users = useSelector((state) => state.main.users);
+  const loggedinUser = users.find((user) => user.isLoggedin);
+  console.log(loggedinUser);
   useEffect(() => {
-    const fetchLogged = async () => {
-      const loggedInUser = await dispatch(getLoggedUser());
-      if (loggedInUser?.isLoggedin) {
-        navigate("/1");
-      }
-    };
-    fetchLogged();
-  }, [dispatch, navigate]);
+    if (loggedinUser?.isLoggedin) {
+      navigate("/1");
+    }
+  }, [loggedinUser?.isLoggedin, navigate]);
   return (
-    <div className="w-full h-screen px-[60px] py-[41px]">
+    <div className="w-full px-[60px] py-[41px]">
       <LandingNavbar />
       <LandingHeader />
     </div>
