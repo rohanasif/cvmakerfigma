@@ -9,13 +9,13 @@ const LandingPage = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const fetchLogged = async () => {
-      await dispatch(getLoggedUser());
+      const loggedInUser = await dispatch(getLoggedUser());
+      if (loggedInUser.isLoggedin) {
+        navigate("/one");
+      }
     };
-    const loggedIn = fetchLogged();
-    if (loggedIn) {
-      navigate("/one");
-    }
-  }, [dispatch]);
+    fetchLogged();
+  }, [dispatch, navigate]);
   return (
     <div className="w-full h-screen px-[60px] py-[41px]">
       <LandingNavbar />

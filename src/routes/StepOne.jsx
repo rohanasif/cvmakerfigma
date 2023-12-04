@@ -1,7 +1,8 @@
 import React from "react";
+import Pagination from "../components/Pagination";
 
 const StepOne = () => {
-  return <div>StepOne</div>;
+  return <Pagination />;
 };
 
 export default StepOne;

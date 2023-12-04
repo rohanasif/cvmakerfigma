@@ -27,3 +27,27 @@
 .signupdivs {
   border: 0.25px solid #979696;
 }
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination a.active,
+.pagination a:hover {
+  background-color: #4caf50;
+  color: white;
+}
