@@ -14,6 +14,7 @@ const StepFour = () => {
         </p>
         <Pagination pageNumber={3} />
       </div>
+      
     </div>
   );
 };
