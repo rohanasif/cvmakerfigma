@@ -3,7 +3,7 @@ import Pagination from "../components/Pagination";
 import MainNavBar from "../components/MainNavBar";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import step from "../actions/index";
+import { step } from "../actions/index";
 const StepTwo = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const StepTwo = () => {
   const handleStep = (e) => {
     e.preventDefault();
     dispatch(step(info));
-    navigate("/2");
+    navigate("/3");
   };
   return (
     <div className="w-full px-[60px] py-[41px]">
@@ -66,28 +66,28 @@ const StepTwo = () => {
           value={user.phone}
           onChange={(e) => handleChange(e)}
         />
-        <label htmlFor="address1">
+        <label htmlFor="addressone">
           Address Line 1<span className="text-red-700">*</span>
         </label>
         <input
           type="text"
           className="input-border rounded-lg py-3 px-4"
           placeholder="Enter address"
-          id="address1"
-          name="address1"
+          id="addressone"
+          name="addressone"
           required
           value={info.addressone}
           onChange={(e) => handleChange(e)}
         />
-        <label htmlFor="address2">
-          Address Line 1<span className="text-red-700">*</span>
+        <label htmlFor="addresstwo">
+          Address Line 2<span className="text-red-700">*</span>
         </label>
         <input
           type="text"
           className="input-border rounded-lg py-3 px-4"
           placeholder="Enter address"
-          id="address2"
-          name="address2"
+          id="addresstwo"
+          name="addresstwo"
           required
           value={info.addresstwo}
           onChange={(e) => handleChange(e)}
@@ -141,7 +141,7 @@ const StepTwo = () => {
           id="zip"
           name="zip"
           required
-          value={info.addressone}
+          value={info.zip}
           onChange={(e) => handleChange(e)}
         />
         <button

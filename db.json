@@ -9,9 +9,18 @@
       "isLoggedin": true,
       "fname": "Rohan",
       "lname": "Asif",
-      "dob": "2222-02-22",
+      "dob": "1992-11-11",
       "degree": "Bsc",
-      "gender": "male"
+      "gender": "male",
+      "addressone": "396 Z Street 21 Phase 3 DHA Lahore",
+      "addresstwo": "33ss222",
+      "home": "012122",
+      "country": "Pakistan",
+      "city": "Lahore",
+      "zip": "54000",
+      "jobcity": "Lahore",
+      "experience": "Fresh",
+      "designation": "Frontend"
     }
   ],
   "message": {

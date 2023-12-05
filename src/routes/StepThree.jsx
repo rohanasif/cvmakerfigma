@@ -3,7 +3,7 @@ import Pagination from "../components/Pagination";
 import MainNavBar from "../components/MainNavBar";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import step from "../actions/index";
+import { step } from "../actions/index";
 const StepThree = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const StepThree = () => {
   const handleStep = (e) => {
     e.preventDefault();
     dispatch(step(info));
-    navigate("/3");
+    navigate("/4");
   };
   return (
     <div className="w-full px-[60px] py-[41px]">
@@ -35,7 +35,7 @@ const StepThree = () => {
         onSubmit={(e) => handleStep(e)}
         className="flex flex-col gap-[20px]"
       >
-        <label htmlFor="email">
+        <label htmlFor="jobcity">
           Job City<span className="text-red-700">*</span>
         </label>
         <input
