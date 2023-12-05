@@ -22,7 +22,7 @@ const StepFour = () => {
       </div>
       <div>
         <p>Create profile from scratch</p>
-        <button onClick={() => navigate("/add")}>Continue</button>
+        <button onClick={() => navigate("/review")}>Continue</button>
       </div>
     </div>
   );
